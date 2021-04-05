@@ -1,23 +1,21 @@
-import Head from 'next/head';
-import Banner from '../components/FirstSection/Banner';
-import Hero from '../components/HomeHeroSection/Hero';
-import Navbar from '../components/Navbar/Navbar';
+import Stripe from 'stripe';
 import Product from '../components/Product/Product';
 import styled from 'styled-components';
-import Stripe from 'stripe';
+
 const Container = styled.div`
   width: 100vw;
   display: flex;
   flex-wrap: wrap;
-
   margin: auto;
+  position: relative;
   justify-content: center;
+  z-index: 0;
   gap: 2rem 3rem;
   @media (min-width: 1000px) {
     width: 90vw;
   }
   @media (min-width: 2000px) {
-    width: 80vw;
+    width: 60vw;
   }
 `;
 export const getServerSideProps = async (x) => {
@@ -37,17 +35,14 @@ export const getServerSideProps = async (x) => {
     };
   }
 };
-export default function Home({ products }) {
+const Products = ({ products }) => {
   return (
-    <div>
-      <Navbar />
-      <Hero />
-      <Banner />
-      <Container>
-        {products.data.length > 0
-          ? products.data.map((product) => <Product price={product} />)
-          : null}
-      </Container>
-    </div>
+    <Container>
+      {products.data.length > 0
+        ? products.data.map((product) => <Product price={product} />)
+        : null}
+    </Container>
   );
-}
+};
+
+export default Products;
