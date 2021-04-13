@@ -19,31 +19,29 @@ const Container = styled.div`
     width: 80vw;
   }
 `;
-export const getServerSideProps = async (x) => {
+export const getServerSideProps = async () => {
   const stripe = new Stripe(
     'sk_test_51I0kmUEhHUADxxMxL3O5JljiCObTTl1JuSmMLEzpwgoZ2Goxn1zo4S9YVyTPsU9h1lpwjYQeTrxSZZZKtqKbxA3D00IuKNCWow'
   );
-  let products;
-  if (stripe) {
-    products = await stripe.prices.list({
-      limit: 20,
-      expand: ['data.product'],
-    });
-    return {
-      props: {
-        products,
-      },
-    };
-  }
+
+  const prices = await stripe.prices.list({
+    limit: 20,
+    expand: ['data.product'],
+  });
+  return {
+    props: {
+      prices,
+    },
+  };
 };
-export default function Home({ products }) {
+export default function Home({ prices }) {
   return (
     <div>
       <Hero />
       <Banner />
       <Container>
-        {products.data.length > 0
-          ? products.data.map((product) => <Product price={product} />)
+        {prices.data.length > 0
+          ? prices.data.map((price) => <Product price={price} />)
           : null}
       </Container>
     </div>

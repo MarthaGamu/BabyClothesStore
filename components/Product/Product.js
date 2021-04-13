@@ -79,7 +79,7 @@ const Product = ({ price }) => {
     <>
       <CardContainer key={price.id}>
         <div className="ImageWrapper">
-          <Link as={productDetails.id} href="[productDetails]">
+          <Link href={`/product/${price.id}`}>
             <img src={productDetails.images[0]} alt="product image" />
           </Link>
 
