@@ -1,10 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
 import smilingmother from '../../public/mummiesboy.jpg';
-
+import Link from 'next/link';
 const Container = styled.div`
   width: 100%;
-  height: 100vh;
+  height: 70vh;
   position: relative;
 
   img {
@@ -14,7 +14,7 @@ const Container = styled.div`
   }
   .overlay {
     width: 100%;
-    height: 100vh;
+    height: 100%;
     position: absolute;
     top: 0%;
     display: flex;
@@ -37,6 +37,7 @@ const Container = styled.div`
       background: #7fb4e0;
       color: white;
       border: none;
+      outline: none;
     }
   }
 `;
@@ -47,7 +48,9 @@ const Hero = () => {
       <div className="overlay">
         <h1>25% OFF ON BABY ESSENTIALS</h1>
         <div className="line"></div>
-        <button>SHOP NOW!</button>
+        <Link href="/products">
+          <button>SHOP NOW!</button>
+        </Link>
       </div>
     </Container>
   );

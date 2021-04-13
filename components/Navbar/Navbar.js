@@ -7,10 +7,11 @@ import { FiX } from 'react-icons/fi';
 import Image from 'next/image';
 import { HiOutlineMail } from 'react-icons/hi';
 import { FaPhoneAlt } from 'react-icons/fa';
-
+import Link from 'next/link';
 const TopNavbar = styled.div`
   width: 100%;
   background: #54c8d7;
+  font-size: 1rem;
 
   .navWrapper {
     width: 90%;
@@ -20,9 +21,8 @@ const TopNavbar = styled.div`
     padding: 1rem 1rem;
     margin: auto;
     .iconTopbar {
-      font-size: 1.7rem;
+      font-size: 1.3rem;
       margin-right: 1px;
-      padding-top: 0.7rem;
     }
     @media (min-width: 1800px) {
       width: 60%;
@@ -37,6 +37,7 @@ const BottomNavbar = styled.div`
   width: 100%;
   padding: 1rem 1.3rem;
   z-index: 1;
+  border-bottom: 1px solid #54c8d7;
 
   @media (max-width: 1000px) {
     display: none;
@@ -68,6 +69,9 @@ const BottomNavbar = styled.div`
     li {
       list-style: none;
       font-weight: 500;
+      display: flex;
+      margin-left: 1rem;
+      cursor: pointer;
     }
   }
 
@@ -122,23 +126,34 @@ const Navbar = () => {
       </TopNavbar>
       <BottomNavbar>
         <div className="navWrapper">
-          <div className="logo">
-            {' '}
-            <Image
-              src="/logoo.png"
-              alt="logo"
-              className="imageLogo"
-              width={150}
-              height={80}
-              style={{ objectFit: 'cover' }}
-            />
-          </div>
+          <Link href="/">
+            <div className="logo">
+              {' '}
+              <Image
+                src="/logoo.png"
+                alt="logo"
+                className="imageLogo"
+                width={150}
+                height={80}
+                style={{ objectFit: 'cover' }}
+              />
+            </div>
+          </Link>
           <nav className="navLinks">
-            {data.map((linkName) => (
-              <ul key={linkName.id}>
-                <li>{linkName.name}</li>
+            {
+              <ul>
+                <Link href="/products">
+                  <li>
+                    <a>BABY CLOTHES</a>
+                  </li>
+                </Link>
+                <Link href="/Contact">
+                  <li>
+                    <a>CONTACT US</a>
+                  </li>
+                </Link>
               </ul>
-            ))}
+            }
           </nav>
           <div className="cartIcon">
             <TiShoppingCart />

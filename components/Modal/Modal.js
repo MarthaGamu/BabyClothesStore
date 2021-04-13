@@ -7,9 +7,8 @@ import { GrFavorite } from 'react-icons/gr';
 import { MdFavorite } from 'react-icons/md';
 
 const ModalContainer = styled.div`
-  width: 100vw;
-  height: 200%;
-  background: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  height: auto;
   color: white;
   position: absolute;
   z-index: 1;
@@ -19,6 +18,8 @@ const ModalContainer = styled.div`
 
 const CenterContainer = styled.div`
   background-color: white;
+  display: flex;
+  justify-content: center;
   width: 70%;
 
   @media (min-width: 1800px) {
@@ -98,11 +99,12 @@ const CenterContainer = styled.div`
     }
   }
 `;
-const Modal = ({ modalData, toggle }) => {
+const Modal = ({ modalData }) => {
   const [close, setClose] = useState(true);
   const [favorite, setfavorite] = useState(false);
+  console.log('[Modal] modalData ', modalData);
 
-  return (
+  return modalData ? (
     <>
       {close && (
         <ModalContainer>
@@ -154,7 +156,7 @@ const Modal = ({ modalData, toggle }) => {
         </ModalContainer>
       )}
     </>
-  );
+  ) : null;
 };
 
 export default Modal;

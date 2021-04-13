@@ -1,7 +1,6 @@
 import Head from 'next/head';
 import Banner from '../components/FirstSection/Banner';
 import Hero from '../components/HomeHeroSection/Hero';
-import Navbar from '../components/Navbar/Navbar';
 import Product from '../components/Product/Product';
 import styled from 'styled-components';
 import Stripe from 'stripe';
@@ -40,7 +39,6 @@ export const getServerSideProps = async (x) => {
 export default function Home({ products }) {
   return (
     <div>
-      <Navbar />
       <Hero />
       <Banner />
       <Container>

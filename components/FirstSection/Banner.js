@@ -53,6 +53,7 @@ const Container = styled.div`
 const Heading = styled.div`
   width: 100vw;
   margin: auto;
+  color: #494746;
 
   h2 {
     font-size: 2rem;
