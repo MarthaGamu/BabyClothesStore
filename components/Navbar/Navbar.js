@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useCart } from '../ContextApi/Context';
 import styled from 'styled-components';
 import { data } from './data';
 import { TiShoppingCart } from 'react-icons/ti';
@@ -110,6 +111,8 @@ const MobileNavbar = styled.div`
 
 const Navbar = () => {
   const [toggle, setToggle] = useState(false);
+  const state = useCart();
+  console.log('I am the current state', state);
   return (
     <>
       <TopNavbar>
@@ -155,9 +158,13 @@ const Navbar = () => {
               </ul>
             }
           </nav>
-          <div className="cartIcon">
-            <TiShoppingCart />
-          </div>
+          <Link href="/CartList">
+            <div className="cartIcon">
+              <span>
+                <TiShoppingCart />({state.length})
+              </span>
+            </div>
+          </Link>
         </div>
       </BottomNavbar>
       <MobileNavbar>
@@ -189,7 +196,7 @@ const Navbar = () => {
             )}
           </div>
           <div>
-            <TiShoppingCart />
+            <TiShoppingCart />({state.length})
           </div>
         </nav>
       </MobileNavbar>

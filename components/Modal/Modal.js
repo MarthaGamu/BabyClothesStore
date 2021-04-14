@@ -5,6 +5,7 @@ import { ImStarFull } from 'react-icons/im';
 import { MdAddShoppingCart } from 'react-icons/md';
 import { GrFavorite } from 'react-icons/gr';
 import { MdFavorite } from 'react-icons/md';
+import CartButtons from '../CartButtons/CartButtons';
 
 const ModalContainer = styled.div`
   width: 100%;
@@ -129,24 +130,8 @@ const Modal = ({ modalData }) => {
                 <span>(0 customer reviews)</span>
               </div>
               <span className="price">£{modalData.unit_amount / 100}.00</span>
-              <div className="addToCart">
-                <div className="quantityCounter">
-                  <div className="decrement">-</div>
-                  <div className="actualPrice">1</div>
-                  <div className="increment">+</div>
-                </div>
-                <div className="cart">
-                  <MdAddShoppingCart className="cartIcon" />
-                  Add To Cart
-                </div>
-                <div className="favorite">
-                  {!favorite ? (
-                    <GrFavorite onClick={() => setfavorite(!favorite)} />
-                  ) : (
-                    <MdFavorite onClick={() => setfavorite(!favorite)} />
-                  )}
-                </div>
-              </div>
+              <CartButtons product={modalData} />
+
               <div className="line"></div>
               <p className="categoryTag">
                 <span>CATEGORY:</span> BABY CLOTHES

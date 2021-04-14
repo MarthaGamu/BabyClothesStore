@@ -5,7 +5,7 @@ import styled from 'styled-components';
 import { ImStarFull } from 'react-icons/im';
 import { useRouter } from 'next/router';
 import { GetStaticProps } from 'next';
-import { MdAddShoppingCart } from 'react-icons/md';
+import CartButtons from '../../components/CartButtons/CartButtons';
 
 const Container = styled.div`
   width: 100vw;
@@ -45,36 +45,9 @@ const InnerContainer = styled.div`
     .price {
       font-size: 2rem;
     }
-    .addToCart {
-      display: flex;
-      /* justify-content: center; */
-      margin-top: 1rem;
-    }
-    .cart {
-      background: #23232c;
-      color: white;
-      padding: 0.6rem 2rem;
-      font-size: 1.5rem;
-    }
-    .quantityCounter {
-      padding: 0.6rem 3rem;
-      margin-right: 1rem;
-      font-size: 1.5rem;
-      border: 1px solid #23232c;
-      display: flex;
-      justify-content: space-between;
-    }
-    .decrement,
-    .actualPrice,
-    .increment {
-      flex: 1;
-      padding-left: 1rem;
-      padding-right: 1rem;
-    }
   }
 `;
 const ProductDetails = ({ item }) => {
-  console.log('item', item);
   return (
     <Container>
       <InnerContainer>
@@ -96,24 +69,7 @@ const ProductDetails = ({ item }) => {
             </p>
             <p> {item.product.description}</p>
             <p className="price">£{item.unit_amount / 100}.00</p>
-            <div className="addToCart">
-              <div className="quantityCounter">
-                <div className="decrement">-</div>
-                <div className="actualPrice">1</div>
-                <div className="increment">+</div>
-              </div>
-              <div className="cart">
-                <MdAddShoppingCart className="cartIcon" />
-                Add To Cart
-              </div>
-              {/* <div className="favorite">
-                {!favorite ? (
-                  <GrFavorite onClick={() => setfavorite(!favorite)} />
-                ) : (
-                  <MdFavorite onClick={() => setfavorite(!favorite)} />
-                )}
-              </div> */}
-            </div>
+            <CartButtons product={item} />
           </div>
         </div>
       </InnerContainer>
@@ -131,14 +87,12 @@ export async function getStaticPaths() {
     limit: 20,
     expand: ['data.product'],
   });
-  console.log('i am existing product', products);
 
   const paths = products.data.map((product) => ({
     params: {
       id: product.id,
     },
   }));
-  console.log('paths => ', paths);
 
   return {
     paths,
