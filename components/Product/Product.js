@@ -4,7 +4,7 @@ import Modal from '../Modal/Modal';
 import { MdAddShoppingCart } from 'react-icons/md';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import { useDispatchCart } from '../ContextApi/Context';
+import { useBasket } from '../ContextApi/Context';
 
 const CardContainer = styled.div`
   background: white;
@@ -72,14 +72,13 @@ const Product = ({ price }) => {
   const productDetails = price.product;
   const [modalData, setModalData] = useState(undefined);
   const [toggle, setToggle] = useState(false);
-  const dispatch = useDispatchCart();
+  const { addToBasket } = useBasket();
+  // const { addToCart } = useCart();
 
   const HandleModalData = () => {
     setModalData(price);
   };
-  const addToCart = (item) => {
-    dispatch({ type: 'ADD', item });
-  };
+
   return (
     <>
       <CardContainer key={price.id}>
@@ -103,7 +102,7 @@ const Product = ({ price }) => {
           <div>
             <MdAddShoppingCart
               className="addToCart"
-              onClick={() => addToCart(price)}
+              onClick={() => addToBasket(price)}
             />
           </div>
         </Footer>

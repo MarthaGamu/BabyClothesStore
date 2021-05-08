@@ -1,15 +1,15 @@
 import Navbar from '../components/Navbar/Navbar';
 import Footer from '../components/Footer/Footer';
 import '../styles/globals.css';
-import { CartProvider } from '../components/ContextApi/Context';
+import StateProvider from '../components/ContextApi/Context';
 function MyApp({ Component, pageProps }) {
   return (
     <>
-      <CartProvider>
+      <StateProvider>
         <Navbar />
         <Component {...pageProps} />
         <Footer />
-      </CartProvider>
+      </StateProvider>
     </>
   );
 }

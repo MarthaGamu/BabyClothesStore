@@ -3,8 +3,7 @@ import styled from 'styled-components';
 import { MdAddShoppingCart } from 'react-icons/md';
 import { GrFavorite } from 'react-icons/gr';
 import { MdFavorite } from 'react-icons/md';
-import { useDispatchCart } from '../ContextApi/Context';
-
+import { useBasket } from '../ContextApi/Context';
 const Container = styled.div`
   .addToCart {
     display: flex;
@@ -42,30 +41,39 @@ const Container = styled.div`
 
 const CartButtons = ({ product }) => {
   const [favorite, setfavorite] = useState(false);
-  const dispatch = useDispatchCart();
+  const { addToBasket, Increment, Decrement } = useBasket();
 
-  const addToCart = (item) => {
-    dispatch({ type: 'ADD', item });
-  };
-  const Increment = (item) => {
-    dispatch({ type: 'INCREMENT', item });
-  };
-  const decrement = (item) => {
-    dispatch({ type: 'DECREMENT', item });
-  };
+  console.log('Product was successfully captured', product);
+
   return (
     <Container>
       <div className="addToCart">
-        <div className="quantityCounter">
-          <div className="decrement" onClick={() => decrement(item)}>
+        {/* <div className="quantityCounter">
+          <div
+            className="decrement"
+            onClick={() => {
+              Decrement(product.id);
+            }}
+          >
             -
           </div>
-          <div className="actualPrice">1</div>
-          <div className="increment" onClick={() => Increment(item)}>
+
+          <div className="actualPrice"></div>
+          <div
+            className="increment"
+            onClick={() => {
+              Increment(product.id);
+            }}
+          >
             +
           </div>
-        </div>
-        <div className="cart" onClick={() => addToCart(product)}>
+        </div> */}
+        <div
+          className="cart"
+          onClick={() => {
+            addToBasket(product);
+          }}
+        >
           <MdAddShoppingCart className="cartIcon" />
           Add To Cart
         </div>

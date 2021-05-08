@@ -34,6 +34,18 @@ export const getServerSideProps = async () => {
     },
   };
 };
+// export function IndexPage() {
+//   return (
+//     <div>
+//       <Head>
+//         <title>My page title</title>
+//         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+//         <script src="https://js.stripe.com/v3/"></script>
+//       </Head>
+//     </div>
+//   );
+// }
+
 export default function Home({ prices }) {
   return (
     <div>

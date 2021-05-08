@@ -115,25 +115,4 @@ export async function getStaticProps({ params }) {
   };
 }
 
-// export async function getServerSideProps(req, res) {
-//   let item = {};
-//   try {
-//     const id = req.query.id;
-//     const stripe = new Stripe(
-//       'sk_test_51I0kmUEhHUADxxMxL3O5JljiCObTTl1JuSmMLEzpwgoZ2Goxn1zo4S9YVyTPsU9h1lpwjYQeTrxSZZZKtqKbxA3D00IuKNCWow'
-//     );
-
-//     const product = await stripe.products.retrieve(id);
-//     console.log('product ==> ', product);
-
-//     item = await product; //.json();
-//     console.log('item', item);
-//   } catch (error) {
-//     console.log('alex error ', error);
-//   }
-//   return {
-//     props: { item },
-//   };
-// }
-
 export default ProductDetails;
