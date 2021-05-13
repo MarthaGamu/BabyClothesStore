@@ -38,9 +38,7 @@ const Heading = styled.div`
   }
 `;
 export const getServerSideProps = async (x) => {
-  const stripe = new Stripe(
-    'sk_test_51I0kmUEhHUADxxMxL3O5JljiCObTTl1JuSmMLEzpwgoZ2Goxn1zo4S9YVyTPsU9h1lpwjYQeTrxSZZZKtqKbxA3D00IuKNCWow'
-  );
+  const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
   let products;
   if (stripe) {
     products = await stripe.prices.list({

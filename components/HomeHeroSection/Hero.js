@@ -3,10 +3,13 @@ import styled from 'styled-components';
 import smilingmother from '../../public/mummiesboy.jpg';
 import Link from 'next/link';
 const Container = styled.div`
-  width: 100%;
-  height: 70vh;
+  width: 100vw;
+  height: 80vh;
+  /* background-image: url(${smilingmother});
+  background-repeat: no-repeat;
+  background-size: cover; */
   position: relative;
-
+  text-align: center;
   img {
     width: 100%;
     height: 100%;
@@ -41,7 +44,7 @@ const Container = styled.div`
     }
   }
 `;
-const Hero = () => {
+const Hero = ({ props }) => {
   return (
     <Container>
       <img src={smilingmother} alt="home hero image" />

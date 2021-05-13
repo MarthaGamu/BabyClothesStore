@@ -77,9 +77,7 @@ const ProductDetails = ({ item }) => {
   );
 };
 export async function getStaticPaths() {
-  const stripe = new Stripe(
-    'sk_test_51I0kmUEhHUADxxMxL3O5JljiCObTTl1JuSmMLEzpwgoZ2Goxn1zo4S9YVyTPsU9h1lpwjYQeTrxSZZZKtqKbxA3D00IuKNCWow'
-  );
+  const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
 
   let products;
   // if (stripe) {
@@ -102,9 +100,7 @@ export async function getStaticPaths() {
 }
 export async function getStaticProps({ params }) {
   console.log('I am params id', params.id);
-  const stripe = new Stripe(
-    'sk_test_51I0kmUEhHUADxxMxL3O5JljiCObTTl1JuSmMLEzpwgoZ2Goxn1zo4S9YVyTPsU9h1lpwjYQeTrxSZZZKtqKbxA3D00IuKNCWow'
-  );
+  const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
 
   const item = await stripe.prices.retrieve(params.id, {
     expand: ['product'],

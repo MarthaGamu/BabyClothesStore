@@ -4,13 +4,9 @@ import { parseCookies, setCookie } from 'nookies';
 import { loadStripe } from '@stripe/stripe-js';
 import { Elements } from '@stripe/react-stripe-js';
 
-const stripePromise = loadStripe(
-  'pk_test_51I0kmUEhHUADxxMxZ0xjv1GXiorHZwEYYE5rChINrCyjaXH4URPx1AnGLa96jSyjFlmX6UNNoUZgGFwcdORr3MpQ00P45tn0x4'
-);
+const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLIC_KEY);
 export const getServerSideProps = async (ctx) => {
-  const stripe = new Stripe(
-    'sk_test_51I0kmUEhHUADxxMxL3O5JljiCObTTl1JuSmMLEzpwgoZ2Goxn1zo4S9YVyTPsU9h1lpwjYQeTrxSZZZKtqKbxA3D00IuKNCWow'
-  );
+  const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
 
   let paymentIntent;
 

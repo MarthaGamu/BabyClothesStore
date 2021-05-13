@@ -21,6 +21,11 @@ const TopNavbar = styled.div`
     justify-content: space-between;
     padding: 1rem 1rem;
     margin: auto;
+
+    .iconWrapper {
+      display: flex;
+      align-items: center;
+    }
     .iconTopbar {
       font-size: 1.3rem;
       margin-right: 1px;
@@ -84,8 +89,9 @@ const BottomNavbar = styled.div`
   }
 `;
 const MobileNavbar = styled.div`
+  border-bottom: 1px solid #54c8d7;
   .logo {
-    background: salmon;
+    background: #54c8d7;
     display: grid;
     place-items: center;
   }
@@ -117,11 +123,11 @@ const Navbar = () => {
     <>
       <TopNavbar>
         <div className="navWrapper">
-          <div>
+          <div className="iconWrapper">
             <HiOutlineMail className="iconTopbar" />
-            marthagmandizvidza@gmail.com
+            babyfashion@info.com
           </div>
-          <div>
+          <div className="iconWrapper">
             <FaPhoneAlt className="iconTopbar" />
             +44 7752723808
           </div>
@@ -170,7 +176,7 @@ const Navbar = () => {
       <MobileNavbar>
         <div className="logo">
           <Image
-            src="/clotheslogo.png"
+            src="/logoo.png"
             alt="logo"
             className="imageLogo"
             width={100}
@@ -187,17 +193,28 @@ const Navbar = () => {
             )}
             {toggle && (
               <nav className="navLinks">
-                {data.map((linkName) => (
-                  <ul key={linkName.id}>
-                    <li>{linkName.name}</li>
+                {
+                  <ul>
+                    <Link href="/products">
+                      <li>
+                        <a>BABY CLOTHES</a>
+                      </li>
+                    </Link>
+                    <Link href="/Contact">
+                      <li>
+                        <a>CONTACT US</a>
+                      </li>
+                    </Link>
                   </ul>
-                ))}
+                }
               </nav>
             )}
           </div>
-          <div>
-            <TiShoppingCart />
-          </div>
+          <Link href="/CartList">
+            <div>
+              <TiShoppingCart />({totalBasket})
+            </div>
+          </Link>
         </nav>
       </MobileNavbar>
     </>

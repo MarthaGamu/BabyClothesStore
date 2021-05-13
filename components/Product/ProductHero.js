@@ -1,10 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
-import smilingmother from '../../public/sechero.jpg';
+import smilingmother from '../../public/kidsonbeach.jpg';
 
 const Container = styled.div`
   width: 100%;
-  height: 40vh;
+  height: 50vh;
   margin-bottom: 7rem;
 
   img {
