@@ -23,6 +23,7 @@ const Container = styled.div`
   width: 80vw;
   margin: auto;
   display: flex;
+  flex-wrap: wrap;
 
   .InnerWrapper {
     display: flex;
@@ -39,6 +40,9 @@ const Container = styled.div`
   .image {
     width: 10rem;
     margin-top: 1rem;
+    @media (max-width: 800px) {
+      width: 7rem;
+    }
 
     img {
       width: 100%;
@@ -60,6 +64,11 @@ const Container = styled.div`
   .OrderSummary {
     flex: 1;
     padding-left: 10rem;
+
+    @media (max-width: 800px) {
+      padding-left: 1rem;
+      margin-top: 2rem;
+    }
   }
   .Details {
     margin-left: 2rem;
@@ -131,9 +140,9 @@ const Cart = () => {
 
   return basket.length > 0 ? (
     <>
-      <h2>
+      <h3>
         SHOPPING BAG({totalBasket}){totalBasket === 1 ? 'item' : 'items'}
-      </h2>
+      </h3>
       <Container>
         <div className="InnerWrapper">
           {basket.map((product) => (
@@ -142,7 +151,7 @@ const Cart = () => {
                 <img src={product.product.images} alt="basket image" />
               </div>
               <div className="Details">
-                <h2>{product.product.name}</h2>
+                <h3>{product.product.name}</h3>
                 <div className="QuantityRow">
                   <strong> QTY: </strong>
                   <div className="Quantity">

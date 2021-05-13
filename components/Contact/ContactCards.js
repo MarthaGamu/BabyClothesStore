@@ -13,6 +13,10 @@ const Container = styled.div`
   justify-content: center;
   margin-top: 4rem;
   margin-bottom: 2rem;
+  @media (max-width: 1000px) {
+    grid-template-columns: 19rem;
+    grid-template-rows: 20rem 15rem 15rem 15rem;
+  }
   .cardWrapper {
     background-color: white;
     border: 3px solid #54c8d7;
@@ -22,6 +26,9 @@ const Container = styled.div`
     align-items: center;
     h2 {
       text-transform: uppercase;
+      @media (max-width: 800px) {
+        font-size: 1.3rem;
+      }
     }
   }
   button {
