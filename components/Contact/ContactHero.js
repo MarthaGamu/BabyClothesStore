@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import ProductHero from '../Product/ProductHero';
+import Hero from '../Product/ProductHero';
 import Link from 'next/link';
 
 const Container = styled.div`
@@ -25,7 +25,7 @@ const Container = styled.div`
 const ContactHero = () => {
   return (
     <Container>
-      <ProductHero />
+      <Hero />
       <div className="content">
         <p>
           <Link href="/">

@@ -1,7 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import smilingmother from '../../public/kid3.jpg';
-import Navbar from '../Navbar/Navbar';
 
 const Container = styled.div`
   width: 100vw;
@@ -18,7 +16,7 @@ const Container = styled.div`
     position: absolute;
     width: 100vw;
     height: 55vh;
-    background: rgba(0, 0, 0, 0.3);
+    background: rgba(0, 0, 0, 0.4);
     top: 0%;
     display: grid;
     place-items: center;
@@ -28,13 +26,13 @@ const Container = styled.div`
   }
 `;
 
-const ProductHero = () => {
+const Hero = ({image,alt ="your image", overlayText="text here"}) => {
   return (
     <Container>
-      <img src={smilingmother} alt="hero image product" />
-      <div className="overlay">LATEST TODDLER'S FASHION...</div>
+      <img src={image} alt={alt} />
+      <div className="overlay">{overlayText}</div>
     </Container>
   );
 };
 
-export default ProductHero;
+export default Hero;

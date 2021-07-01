@@ -1,7 +1,8 @@
 import Stripe from 'stripe';
 import Product from '../components/Product/Product';
 import styled from 'styled-components';
-import ProductHero from '../components/Product/ProductHero';
+import Hero from '../components/Organisms/Hero';
+import kids from '../public/kid3.jpg';
 
 const Container = styled.div`
   width: 100vw;
@@ -55,7 +56,11 @@ export const getServerSideProps = async (x) => {
 const Products = ({ products }) => {
   return (
     <>
-      <ProductHero />
+      <Hero
+        image={kids}
+        alt="products"
+        overlayText="LATEST TODDLER'S FASHION..."
+      />
       <Heading>
         <h2>Our products</h2>
       </Heading>
