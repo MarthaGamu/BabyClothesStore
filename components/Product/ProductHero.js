@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import smilingmother from '../../public/sechero.jpg';
+import smilingmother from '../../public/kids3.jpg';
 import Navbar from '../Navbar/Navbar';
 
 const Container = styled.div`

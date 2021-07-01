@@ -64,7 +64,7 @@ const Hero = ({ props }) => {
     <Container>
       {/* <img src={smilingmother} alt="home hero image" /> */}
       <div className="overlay">
-        <h1>25% OFF ON BABY ESSENTIALS</h1>
+        <h1>25% OFF ON BABY ESSENTIALSss</h1>
         <div className="line"></div>
         <Link href="/products">
           <button>SHOP NOW!</button>
