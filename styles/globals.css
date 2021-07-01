@@ -15,3 +15,31 @@ a {
 * {
   box-sizing: border-box;
 }
+@font-face {
+  font-family: "EBGaramond";
+  src: url("/fonts/EBGaramond/EBGaramond-Regular.ttf");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: "EBGaramond";
+  src: url("/fonts/EBGaramond/EBGaramond-Medium.ttf");
+  font-style: medium;
+  font-weight: 500;
+  font-display: swap;
+}
+@font-face {
+ font-family: 'Bubblegum Sans', cursive;
+  src: url('https://fonts.googleapis.com/css2?family=Bubblegum+Sans&display=swap');
+  font-style: medium;
+  font-weight: 500;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Bubblegum Sans';
+   src:url('https://fonts.googleapis.com/css2?family=Bubblegum+Sans&display=swap');
+   font-style: medium;
+   font-weight: 500;
+   font-display: swap;
+ }

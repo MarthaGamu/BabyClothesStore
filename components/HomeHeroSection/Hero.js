@@ -18,6 +18,7 @@ const Container = styled.div`
   position: relative;
   text-align: center;
   border-bottom: 2px solid black;
+  font-family: 'EBGaramond';
   img {
     width: 100%;
     height: 100%;
@@ -39,9 +40,12 @@ const Container = styled.div`
       margin-bottom: 1rem;
     }
     h1 {
-      font-size: 3rem;
+      font-size: 2rem;
       color: white;
       letter-spacing: 0.5rem;
+      @media (min-width: 1000px) {
+        font-size: 3.5rem;
+      }
     }
     button {
       padding: 1.2rem 1.8rem;
@@ -64,7 +68,7 @@ const Hero = ({ props }) => {
     <Container>
       {/* <img src={smilingmother} alt="home hero image" /> */}
       <div className="overlay">
-        <h1>25% OFF ON BABY ESSENTIALSss</h1>
+        <h1>25% OFF ON BABY ESSENTIALS</h1>
         <div className="line"></div>
         <Link href="/products">
           <button>SHOP NOW!</button>

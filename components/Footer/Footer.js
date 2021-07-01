@@ -25,11 +25,11 @@ const Container = styled.div`
   .lowerBanner {
     width: 100%;
     background: black;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
+    padding-top: 2px;
+    padding-bottom: 2px;
     .bannerWrapper {
       width: 90%;
-      margin: 2rem auto;
+      margin: 1rem auto;
       font-size: 0.8rem;
       padding-left: 4rem;
 

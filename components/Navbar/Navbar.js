@@ -62,10 +62,11 @@ const BottomNavbar = styled.div`
     flex: 1;
     display: grid;
     place-items: center;
-    font-size: 2rem;
+    font-size: 2.5rem;
     color: white;
-    font-style: italic;
-    border-bottom: #265c7e;
+    border: 1.5px solid white;
+    opacity: 0.3;
+    font-family: 'Bubblegum Sans', cursive;
   }
   .toggleContainer {
     position: absolute;

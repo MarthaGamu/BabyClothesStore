@@ -11,6 +11,8 @@ const CardContainer = styled.div`
   background: white;
   position: relative;
   z-index: 0;
+  cursor: pointer;
+  font-family: 'Bubblegum Sans';
   h3 {
     margin: 0;
     padding: 0;
