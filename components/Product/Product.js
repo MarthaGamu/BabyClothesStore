@@ -5,6 +5,7 @@ import { MdAddShoppingCart } from 'react-icons/md';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useBasket } from '../ContextApi/Context';
+import Navbar from '../Navbar/Navbar';
 
 const CardContainer = styled.div`
   background: white;
@@ -46,7 +47,7 @@ const CardContainer = styled.div`
     }
   }
   .ImageWrapper:hover {
-    border: 0.2px solid #494746;
+    /* border: 0.2px solid #494746; */
     .viewText {
       visibility: visible;
     }

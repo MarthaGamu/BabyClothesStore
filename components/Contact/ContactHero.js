@@ -1,10 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
+import ProductHero from '../Product/ProductHero';
 import Link from 'next/link';
 
 const Container = styled.div`
   width: 100%;
-
   display: grid;
   place-items: center;
 
@@ -12,6 +12,7 @@ const Container = styled.div`
     display: flex;
     margin-left: 3rem;
     flex-direction: column;
+    cursor: pointer;
     p {
       font-size: 1rem;
     }
@@ -24,6 +25,7 @@ const Container = styled.div`
 const ContactHero = () => {
   return (
     <Container>
+      <ProductHero />
       <div className="content">
         <p>
           <Link href="/">

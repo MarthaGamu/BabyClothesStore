@@ -2,6 +2,7 @@ import Head from 'next/head';
 import Banner from '../components/FirstSection/Banner';
 import Hero from '../components/HomeHeroSection/Hero';
 import Product from '../components/Product/Product';
+import Navbar from '../components/Navbar/Navbar';
 import styled from 'styled-components';
 import Stripe from 'stripe';
 const Container = styled.div`
@@ -9,7 +10,7 @@ const Container = styled.div`
   display: flex;
   flex-wrap: wrap;
 
-  margin: auto;
+  margin: 5rem auto;
   justify-content: center;
   gap: 2rem 3rem;
   @media (min-width: 1000px) {
@@ -50,7 +51,7 @@ export default function Home({ prices }) {
   return (
     <div>
       <Hero />
-      <Banner />
+      {/* <Banner /> */}
       <Container>
         {prices.data.length > 0
           ? prices.data.map((price) => <Product price={price} />)

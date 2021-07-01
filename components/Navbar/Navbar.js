@@ -11,7 +11,7 @@ import { FaPhoneAlt } from 'react-icons/fa';
 import Link from 'next/link';
 const TopNavbar = styled.div`
   width: 100%;
-  background: #54c8d7;
+  background: #333333;
   font-size: 1rem;
 
   .navWrapper {
@@ -43,7 +43,7 @@ const BottomNavbar = styled.div`
   width: 100%;
   padding: 1rem 1.3rem;
   z-index: 1;
-  border-bottom: 1px solid #54c8d7;
+  position: absolute;
 
   @media (max-width: 1000px) {
     display: none;
@@ -52,6 +52,7 @@ const BottomNavbar = styled.div`
     width: 90%;
     margin: auto;
     display: flex;
+    cursor: pointer;
 
     @media (min-width: 1800px) {
       width: 60%;
@@ -61,6 +62,10 @@ const BottomNavbar = styled.div`
     flex: 1;
     display: grid;
     place-items: center;
+    font-size: 2rem;
+    color: white;
+    font-style: italic;
+    border-bottom: #265c7e;
   }
   .toggleContainer {
     position: absolute;
@@ -78,6 +83,7 @@ const BottomNavbar = styled.div`
       display: flex;
       margin-left: 1rem;
       cursor: pointer;
+      color: white;
     }
   }
 
@@ -86,6 +92,7 @@ const BottomNavbar = styled.div`
     font-size: 1.5rem;
     display: grid;
     place-items: center;
+    color: white;
   }
 `;
 const MobileNavbar = styled.div`
@@ -121,7 +128,7 @@ const Navbar = () => {
 
   return (
     <>
-      <TopNavbar>
+      {/* <TopNavbar>
         <div className="navWrapper">
           <div className="iconWrapper">
             <HiOutlineMail className="iconTopbar" />
@@ -132,20 +139,21 @@ const Navbar = () => {
             +44 7752723808
           </div>
         </div>
-      </TopNavbar>
+      </TopNavbar> */}
       <BottomNavbar>
         <div className="navWrapper">
           <Link href="/">
             <div className="logo">
               {' '}
-              <Image
+              {/* <Image
                 src="/logoo.png"
                 alt="logo"
                 className="imageLogo"
                 width={150}
                 height={80}
                 style={{ objectFit: 'cover' }}
-              />
+              /> */}
+              KidsCorner
             </div>
           </Link>
           <nav className="navLinks">
@@ -211,7 +219,7 @@ const Navbar = () => {
             )}
           </div>
           <Link href="/CartList">
-            <div>
+            <div className="cartIcon">
               <TiShoppingCart />({totalBasket})
             </div>
           </Link>
