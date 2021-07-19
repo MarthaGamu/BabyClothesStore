@@ -9,9 +9,10 @@ import CartButtons from '../../components/CartButtons/CartButtons';
 import darkmode from '../../public/darkmode.jpg';
 const Container = styled.div`
   width: 100vw;
-  height: 70vh;
   display: grid;
   place-items: center;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
 `;
 const InnerContainer = styled.div`
   width: 80vw;
@@ -29,7 +30,7 @@ const InnerContainer = styled.div`
     justify-content: flex-end;
 
     .imageWrapper {
-      width: 25rem;
+      width: 15rem;
 
       img {
         width: 100%;
