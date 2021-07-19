@@ -6,7 +6,7 @@ import { ImStarFull } from 'react-icons/im';
 import { useRouter } from 'next/router';
 import { GetStaticProps } from 'next';
 import CartButtons from '../../components/CartButtons/CartButtons';
-
+import darkmode from '../../public/darkmode.jpg';
 const Container = styled.div`
   width: 100vw;
   height: 70vh;
@@ -47,33 +47,41 @@ const InnerContainer = styled.div`
     }
   }
 `;
+const HeroImage = styled.div`
+  width: 100vw;
+  height: 12vh;
+  background-color: #23232c;
+`;
 const ProductDetails = ({ item }) => {
   return (
-    <Container>
-      <InnerContainer>
-        <div className="image">
-          <div className="imageWrapper">
-            <img src={item.product.images} alt="Product image" />
+    <>
+      <HeroImage>{/* <img src={darkmode} alt="dark mode" /> */}</HeroImage>
+      <Container>
+        <InnerContainer>
+          <div className="image">
+            <div className="imageWrapper">
+              <img src={item.product.images} alt="Product image" />
+            </div>
           </div>
-        </div>
-        <div className="productDetails">
-          <div>
-            <h2>{item.product.name}</h2>
-            <p>
-              <ImStarFull className="icon" />
-              <ImStarFull className="icon" />
-              <ImStarFull className="icon" />
-              <ImStarFull className="icon" />
-              <ImStarFull className="icon" />
-              (Customer Reviews)
-            </p>
-            <p> {item.product.description}</p>
-            <p className="price">£{item.unit_amount / 100}.00</p>
-            <CartButtons product={item} />
+          <div className="productDetails">
+            <div>
+              <h2>{item.product.name}</h2>
+              <p>
+                <ImStarFull className="icon" />
+                <ImStarFull className="icon" />
+                <ImStarFull className="icon" />
+                <ImStarFull className="icon" />
+                <ImStarFull className="icon" />
+                (Customer Reviews)
+              </p>
+              <p> {item.product.description}</p>
+              <p className="price">£{item.unit_amount / 100}.00</p>
+              <CartButtons product={item} />
+            </div>
           </div>
-        </div>
-      </InnerContainer>
-    </Container>
+        </InnerContainer>
+      </Container>
+    </>
   );
 };
 export async function getStaticPaths() {

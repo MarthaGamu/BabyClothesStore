@@ -60,6 +60,7 @@ const Container = styled.div`
       color: #50b5c2;
       font-weight: bold;
       font-size: medium;
+      transition: all 20ms;
     }
   }
 `;

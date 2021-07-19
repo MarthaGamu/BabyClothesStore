@@ -16,6 +16,7 @@ const Container = styled.div`
   margin-top: 6rem;
   background: #333333;
   color: white;
+  font-family: 'Bubblegum Sans';
   .Whiteline {
     width: 2rem;
     height: 0.2rem;
