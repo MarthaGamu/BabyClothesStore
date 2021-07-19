@@ -14,6 +14,11 @@ const Success = styled.div`
     text-align: center;
   }
 `;
+const HeroImage = styled.div`
+  width: 100vw;
+  height: 12vh;
+  background-color: #23232c;
+`;
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY, {
   apiVersion: '2020-08-27',
 });
@@ -34,7 +39,12 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
 };
 
 const OrderSuccess = ({ customerEmail }) => {
-  return <Success>Your order was successfully placed {customerEmail}</Success>;
+  return (
+    <>
+      <HeroImage>{/* <img src={darkmode} alt="dark mode" /> */}</HeroImage>
+      <Success>Your order was successfully placed {customerEmail}</Success>
+    </>
+  );
 };
 
 export default OrderSuccess;
